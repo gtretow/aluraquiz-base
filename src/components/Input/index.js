@@ -9,6 +9,10 @@ const Input = styled.input`
   font-size: 20px;
   font-family: "Lato";
   text-align: center;
+
+  :focus {
+    border: 3px solid #2f4055;
+  }
 `;
 
 export default Input;

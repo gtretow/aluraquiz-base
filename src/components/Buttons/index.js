@@ -9,6 +9,14 @@ const Button = styled.button`
   width: 11rem;
   font-family: "Lato";
   font-size: 20px;
+  color: ${({ theme }) => theme.colors.black};
+  border: 1px solid #333a31;
+  transition: 0.1s ease-in-out;
+
+  :hover {
+    background-color: ${({ theme }) => theme.colors.hover};
+    color: ${({ theme }) => theme.colors.contrastText};
+  }
 `;
 
 export default Button;
