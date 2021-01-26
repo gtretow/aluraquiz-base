@@ -32,11 +32,9 @@ export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
       <Head>
-        <meta
-          property="og:url"
-          content="https://images.pushsquare.com/aa5764f1b09ad/best-ps4-fighting-games-playstation-4-1.original.jpg"
-          key="ogurl"
-        />
+        <title>AluraQuiz - Fighing Games</title>
+        <meta property="og:tittle" content="Fighting Games quiz" />
+        <meta property="og:image" content={db.bg} />
       </Head>
       <QuizContainer>
         <QuizLogo />
