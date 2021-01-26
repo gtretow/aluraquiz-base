@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable func-names */
@@ -12,13 +13,8 @@ import QuizLogo from "../src/components/QuizLogo";
 import QuizBackground from "../src/components/QuizBackground";
 import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
-
-// const BackgroundImage = styled.div`
-//   background-image: url(${db.bg});
-//   flex: 1;
-//   background-size: cover;
-//   background-position: center;
-// `;
+import Button from "../src/components/Buttons";
+import Input from "../src/components/Input";
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -53,15 +49,15 @@ export default function Home() {
                 },
               }}
             >
-              <input
+              <Input
                 placeholder="Digite seu Nome"
                 onChange={function (event) {
                   setName(event.target.value);
                 }}
               />
-              <button type="submit" disabled={name.length === 0}>
+              <Button type="submit" disabled={name.length === 0}>
                 Jogar {name}
-              </button>
+              </Button>
             </form>
           </Widget.Content>
         </Widget>

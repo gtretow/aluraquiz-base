@@ -26,10 +26,11 @@
     "colors": {
       "primary": "#8397B9",
       "secondary": "#A7462D",
-      "mainBg": "#283D5A",
+      "mainBg": "#232323",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
-      "success": "#4CAF50"
+      "success": "#4CAF50",
+      "black": "#232323"
     },
     "borderRadius": "4px"
   }
