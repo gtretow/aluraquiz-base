@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable func-names */
 /* eslint-disable quotes */
 import React from "react";
 import styled from "styled-components";
-import Head from "next/head";
+import { useRouter } from "next/router";
 
 import db from "../db.json";
 import Widget from "../src/components/Widget";
@@ -29,13 +32,11 @@ export const QuizContainer = styled.div`
 `;
 
 export default function Home() {
+  const router = useRouter();
+  const [name, setName] = React.useState("");
+
   return (
     <QuizBackground backgroundImage={db.bg}>
-      <Head>
-        <title>AluraQuiz - Fighing Games</title>
-        <meta property="og:tittle" content={db.title} />
-        <meta property="og:image" content={db.bg} />
-      </Head>
       <QuizContainer>
         <QuizLogo />
         <Widget>
@@ -43,7 +44,25 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <form
+              onSubmit={{
+                function(event) {
+                  event.preventDefault();
+
+                  router.push(`/quiz?name=${name}`);
+                },
+              }}
+            >
+              <input
+                placeholder="Digite seu Nome"
+                onChange={function (event) {
+                  setName(event.target.value);
+                }}
+              />
+              <button type="submit" disabled={name.length === 0}>
+                Jogar {name}
+              </button>
+            </form>
           </Widget.Content>
         </Widget>
 
