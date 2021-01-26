@@ -31,25 +31,25 @@ export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState("");
 
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    router.push(`/quiz?name=${name}`);
+  }
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>{db.title}</h1>
+            <h1>Fighting Games Quiz!</h1>
           </Widget.Header>
           <Widget.Content>
-            <form
-              onSubmit={{
-                function(event) {
-                  event.preventDefault();
-
-                  router.push(`/quiz?name=${name}`);
-                },
-              }}
-            >
+            <form onSubmit={handleSubmit}>
               <Input
+                value={name}
+                min={3}
                 placeholder="Digite seu Nome"
                 onChange={function (event) {
                   setName(event.target.value);
