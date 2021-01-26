@@ -17,6 +17,11 @@ const Button = styled.button`
     background-color: ${({ theme }) => theme.colors.hover};
     color: ${({ theme }) => theme.colors.contrastText};
   }
+
+  :disabled {
+    background-color: gray;
+    color: #333a31;
+  }
 `;
 
 export default Button;
