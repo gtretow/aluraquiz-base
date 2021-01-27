@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-bind */
@@ -26,83 +27,108 @@ function LoadingWidget() {
   );
 }
 
-function QuestionWidget({ question, totalQuestions, questionIndex }) {
+function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
   const questionId = `question__${questionIndex}`;
   return (
     <Widget>
       <Widget.Header>
+        {/* <BackLinkArrow href="/" /> */}
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
+
       <img
         alt="Descrição"
-        style={{ width: "100%", height: "150px", objectFit: "cover" }}
+        style={{
+          width: "100%",
+          height: "150px",
+          objectFit: "cover",
+        }}
         src={question.image}
       />
       <Widget.Content>
         <h2>{question.title}</h2>
         <p>{question.description}</p>
+
         <form
-          onSubmit={(event) => {
-            event.preventDefault();
+          onSubmit={(infosDoEvento) => {
+            infosDoEvento.preventDefault();
+            onSubmit();
           }}
         >
-          {question.alternatives.map((alternative, idx) => {
-            const alternativeId = `alternative__${idx}`;
+          {question.alternatives.map((alternative, alternativeIndex) => {
+            const alternativeId = `alternative__${alternativeIndex}`;
             return (
               <Widget.Topic as="label" htmlFor={alternativeId}>
-                <input id={alternativeId} name={questionId} type="radio" />
+                <input
+                  // style={{ display: 'none' }}
+                  id={alternativeId}
+                  name={questionId}
+                  type="radio"
+                />
                 {alternative}
               </Widget.Topic>
             );
           })}
 
-          {/*         <pre>{JSON.stringify(question, null, 4)}</pre>
-           */}
+          {/* <pre>
+            {JSON.stringify(question, null, 4)}
+          </pre> */}
           <Button type="submit">Confirmar</Button>
         </form>
       </Widget.Content>
     </Widget>
   );
 }
-const screenStates = { QUIZ: "QUIZ", LOADING: "LOADING", RESULT: "RESULT" };
-export default function Quiz() {
+
+const screenStates = {
+  QUIZ: "QUIZ",
+  LOADING: "LOADING",
+  RESULT: "RESULT",
+};
+export default function QuizPage() {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
+
+  const totalQuestions = db.questions.length;
   const questionIndex = currentQuestion;
   const question = db.questions[questionIndex];
-  const totalQuestions = db.questions.length;
 
   React.useEffect(() => {
+    // fetch() ...
     setTimeout(() => {
-      setScreenState(screenState.QUIZ);
+      setScreenState(screenStates.QUIZ);
     }, 1 * 1000);
+    // nasce === didMount
   }, []);
 
-  function handleSubmit() {
+  function handleSubmitQuiz() {
     const nextQuestion = questionIndex + 1;
-    if(nextQuestion)
-    questionIndex + 1;
+    if (nextQuestion < totalQuestions) {
+      setCurrentQuestion(nextQuestion);
+    } else {
+      setScreenState(screenStates.RESULT);
+    }
   }
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
-        {screenState === screenState.QUIZ && (
+        {screenState === screenStates.QUIZ && (
           <QuestionWidget
             question={question}
-            totalQuestions={totalQuestions}
             questionIndex={questionIndex}
-            onSubmit={handleSubmit}
+            totalQuestions={totalQuestions}
+            onSubmit={handleSubmitQuiz}
           />
         )}
-        {screenState === screenState.LOADING && <LoadingWidget />}
 
-        {screenState === screenState.RESULT && (
-          <div>Você acertou X questões, parabéns</div>
+        {screenState === screenStates.LOADING && <LoadingWidget />}
+
+        {screenState === screenStates.RESULT && (
+          <div>Você acertou X questões, parabéns!</div>
         )}
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/gtretow" />
     </QuizBackground>
   );
 }
