@@ -4,7 +4,6 @@
 /* eslint-disable func-names */
 /* eslint-disable quotes */
 import React from "react";
-import styled from "styled-components";
 import { useRouter } from "next/router";
 
 import db from "../db.json";
@@ -15,8 +14,9 @@ import Footer from "../src/components/Footer";
 import GitHubCorner from "../src/components/GitHubCorner";
 import Button from "../src/components/Buttons";
 import Input from "../src/components/Input";
+import QuizContainer from "../src/components/QuizContainer";
 
-export const QuizContainer = styled.div`
+/* export const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -25,7 +25,7 @@ export const QuizContainer = styled.div`
     margin: auto;
     padding: 15px;
   }
-`;
+`; */
 
 export default function Home() {
   const router = useRouter();
@@ -48,12 +48,10 @@ export default function Home() {
           <Widget.Content>
             <form onSubmit={handleSubmit}>
               <Input
+                name="nomeDoUsuario"
                 value={name}
-                min={3}
                 placeholder="Digite seu Nome"
-                onChange={function (event) {
-                  setName(event.target.value);
-                }}
+                onChange={(event) => setName(event.target.value)}
               />
               <Button type="submit" disabled={name.length === 0}>
                 Jogar {name}
