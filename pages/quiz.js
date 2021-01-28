@@ -27,8 +27,16 @@ function LoadingWidget() {
   );
 }
 
-function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
+function QuestionWidget({
+  question,
+  questionIndex,
+  totalQuestions,
+  onSubmit,
+  onChange,
+  selectedAnswer,
+}) {
   const questionId = `question__${questionIndex}`;
+
   return (
     <Widget>
       <Widget.Header>
@@ -64,6 +72,7 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
                   id={alternativeId}
                   name={questionId}
                   type="radio"
+                  onChange={onChange}
                 />
                 {alternative}
               </Widget.Topic>
@@ -73,7 +82,9 @@ function QuestionWidget({ question, questionIndex, totalQuestions, onSubmit }) {
           {/* <pre>
             {JSON.stringify(question, null, 4)}
           </pre> */}
-          <Button type="submit">Confirmar</Button>
+          <Button type="submit" disabled={selectedAnswer.length === 0}>
+            Confirmar
+          </Button>
         </form>
       </Widget.Content>
     </Widget>
@@ -88,6 +99,7 @@ const screenStates = {
 export default function QuizPage() {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
+  const [selectAnswer, setSelectAnswer] = React.useState(0);
 
   const totalQuestions = db.questions.length;
   const questionIndex = currentQuestion;
@@ -98,7 +110,6 @@ export default function QuizPage() {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
     }, 1 * 1000);
-    // nasce === didMount
   }, []);
 
   function handleSubmitQuiz() {
@@ -108,6 +119,14 @@ export default function QuizPage() {
     } else {
       setScreenState(screenStates.RESULT);
     }
+  }
+
+  function handleRadioChange(e) {
+    /* const rightAnswer = setSelectAnswer(e.currentTarget.id);
+
+    rightAnswer === db.questions[currentQuestion].answer
+      ? alert("Respota Correta!")
+      : alert("Resposta Errada"); */
   }
 
   return (
@@ -120,6 +139,8 @@ export default function QuizPage() {
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
             onSubmit={handleSubmitQuiz}
+            selectedAnswer={selectAnswer}
+            onChange={handleRadioChange}
           />
         )}
 
@@ -129,6 +150,7 @@ export default function QuizPage() {
           <div>Você acertou X questões, parabéns!</div>
         )}
       </QuizContainer>
+      <GitHubCorner />
     </QuizBackground>
   );
 }
