@@ -165,22 +165,21 @@ export default function QuizPage() {
     }, 1 * 1000);
   }, []);
 
-  function handleSubmitQuiz() {
+  /*  function handleSubmitQuiz() {
     const nextQuestion = questionIndex + 1;
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(nextQuestion);
     } else {
       setScreenState(screenStates.RESULT);
     }
-  }
+  } */
 
-  function handleRadioChange(e) {
-    /* const rightAnswer = setSelectAnswer(e.currentTarget.id);
+  /* function handleRadioChange(e) {
+     const rightAnswer = setSelectAnswer(e.currentTarget.id);
 
     rightAnswer === db.questions[currentQuestion].answer
       ? alert("Respota Correta!")
-      : alert("Resposta Errada"); */
-  }
+      : alert("Resposta Errada");} */
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -191,8 +190,6 @@ export default function QuizPage() {
             question={question}
             questionIndex={questionIndex}
             totalQuestions={totalQuestions}
-            onSubmit={handleSubmitQuiz}
-            onChange={handleRadioChange}
             addResult={addResult}
           />
         )}
