@@ -7,14 +7,14 @@
       "image": "https://s2.glbimg.com/lWvnYGgUjikRTiF9Muu1zRVMjtE=/0x0:695x390/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/G/l/nnAqlcSBAPHcqwb5bBQA/personagens-brasileiros-blanka-street-fighter-2.jpg",
       "title": "Street Fighter",
       "description": "Qual é o nome do golpe que viralizou a frase `da meia lua e soco!`",
-      "answer": 3,
+      "answer": 2,
       "alternatives": ["Shoryuken", "Reppuuken", "Hadouken", "Sonic Boom"]
     },
     {
       "image": "https://gametimes.com.br/wp-content/uploads/2020/08/darkstalkersresurrection_768511b-1536x1003.jpg",
       "title": "Qual é o jogo?",
       "description": "Que jogo de luta é conhecido como `A fita preta`?",
-      "answer": 4,
+      "answer": 3,
       "alternatives": [
         "Fatal Fury",
         "Darkstalkers",
@@ -26,7 +26,7 @@
       "image": "https://media.giphy.com/media/RhYLzVUsyK5vDdQLS6/giphy.gif",
       "title": "Mortal Kombat",
       "description": "Qual desses personagens não aparece em nenhum jogo da franquia Mortal Kombat?",
-      "answer": 2,
+      "answer": 1,
       "alternatives": [
         "Coringa (Batman)",
         "Pinhead (Hellraiser)",
@@ -38,7 +38,7 @@
       "image": "https://media.giphy.com/media/BcbmDHCI9YvGE/giphy.gif",
       "title": "Tekken",
       "description": "Qual destes golpes é utilizado pelos membros da família Mishimas?",
-      "answer": 2,
+      "answer": 1,
       "alternatives": [
         "Coringa (Batman)",
         "Electric Wind Godfist",
@@ -50,14 +50,14 @@
       "image": "https://www.fightersgeneration.com/nf7/char/jinkazama-tekken3-counter-nina.gif",
       "title": "Tekken",
       "description": "Qual desses personagens faz parte do lore (a história canônica) do jogo?",
-      "answer": 4,
+      "answer": 3,
       "alternatives": ["Tira", "Haomaru", "Rock Howard", "Akuma"]
     },
     {
       "image": "https://i.kinja-img.com/gawker-media/image/upload/t_original/t4hmrdlnhuv213b6hcny.png",
       "title": "Qual é o jogo?",
       "description": "Qual destes jogos popularizou a frase `ULTRA COMBOOOOOOOOOOOOOOOOOOO`?",
-      "answer": 3,
+      "answer": 2,
       "alternatives": [
         "BlazBlue: Cross Tag Battle",
         "Skullgirls",
@@ -69,7 +69,7 @@
       "image": "https://media2.giphy.com/media/2wh8oHlOihUY6or5fK/giphy.gif",
       "title": "Conhecimentos Gerais",
       "description": "Ao falarmos de frame data, o que significa dizer que um golpe é -22 on block?",
-      "answer": 4,
+      "answer": 3,
       "alternatives": [
         "O golpe causa 22 de cheap damage (dano reduzido)",
         "O personagem utiliza o golpe rapidamente e você tem pouco tempo para bloquear",
@@ -81,7 +81,7 @@
       "image": "https://64.media.tumblr.com/f0e16acd7e5232066b593f7c37987688/tumblr_mhnocqeKJD1rngqyzo1_250.gif",
       "title": "Conhecimentos Gerais",
       "description": "O que significa `Shimmy` no mundo dos jogos de luta?",
-      "answer": 2,
+      "answer": 1,
       "alternatives": [
         "Quando você joga utilizando apenas golpes especiais",
         "O ato de quebrar a defesa do seu oponente com um agarrão",
@@ -93,14 +93,14 @@
       "image": "https://www.gamerview.com.br/wp-content/uploads/2020/02/MarvelVsCapcom2_03_Gamerview.jpg",
       "title": "Marvel vs Capcom",
       "description": "Que personagem foi removido do jogo Marvel vs Capcom Infinite e desagradou os jogadores?",
-      "answer": 1,
+      "answer": 0,
       "alternatives": ["Wolverine", "Megaman", "Dante", "Tempestade"]
     },
     {
       "image": "https://cdn.cloudflare.steamstatic.com/steam/apps/631560/header.jpg?t=1496242140",
       "title": "Guilty Gear",
       "description": "Testament é filho adotivo de quem?",
-      "answer": 1,
+      "answer": 0,
       "alternatives": ["Kliff Undersn", "Slayer", "Sol Badguy", "Justice"]
     }
   ],
