@@ -26,6 +26,7 @@ function ResultWidget({ results }) {
       <Widget.Header>Carregando...</Widget.Header>
 
       <Widget.Content>
+        <BackLinkArrow href="/" />
         <p>
           Vamos ver seu resultado, <User /> ! Você acertou{" "}
           {/* {results.reduce((somatoriaAtual, resultadoAtual) => {
