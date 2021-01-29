@@ -104,7 +104,10 @@
       "alternatives": ["Kliff Undersn", "Slayer", "Sol Badguy", "Justice"]
     }
   ],
-  "external": [""],
+  "external": [
+    "https://himym-quiz.thaliaberger.vercel.app/",
+    "https://nextquizz-git-master.tassiaaccioly.vercel.app/"
+  ],
   "theme": {
     "colors": {
       "primary": "#617DA5",

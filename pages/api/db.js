@@ -4,7 +4,7 @@
 import db from "../../db.json";
 
 export default function (req, res) {
-  if (res.method === "OPTIONS") {
+  if (req.method === "OPTIONS") {
     res.status(200).end();
     return;
   }

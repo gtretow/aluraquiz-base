@@ -18,6 +18,7 @@ import QuizContainer from "../../QuizContainer";
 import Button from "../../Buttons";
 import AlternativesForm from "../../AlternativeForm";
 import GitHubCorner from "../../GitHubCorner";
+import BackLinkArrow from "../../BackLinkArrow";
 
 function ResultWidget({ results }) {
   return (
@@ -73,7 +74,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
-        {/* <BackLinkArrow href="/" /> */}
+        <BackLinkArrow href="/" />
         <h3>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h3>
       </Widget.Header>
 
