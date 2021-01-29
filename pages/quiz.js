@@ -26,7 +26,7 @@ function ResultWidget({ results }) {
 
       <Widget.Content>
         <p>
-          Vamos ver seu resultado,{" "}<User /> ! Você acertou{" "}
+          Vamos ver seu resultado, <User /> ! Você acertou{" "}
           {/* {results.reduce((somatoriaAtual, resultadoAtual) => {
             const isAcerto = resultadoAtual === true;
             if (isAcerto) {
