@@ -54,7 +54,7 @@ export default function Home() {
                 onChange={(event) => setName(event.target.value)}
               />
               <Button type="submit" disabled={name.length === 0}>
-                Jogar {name}
+                Vamos jogar {name}!
               </Button>
             </form>
           </Widget.Content>
