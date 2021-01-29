@@ -9,6 +9,7 @@
 /* eslint-disable quotes */
 import React from "react";
 
+import User from "./about";
 import db from "../db.json";
 import Widget from "../src/components/Widget";
 import QuizLogo from "../src/components/QuizLogo";
@@ -25,7 +26,7 @@ function ResultWidget({ results }) {
 
       <Widget.Content>
         <p>
-          Você acertou{" "}
+          Vamos ver seu resultado,{" "}<User /> ! Você acertou{" "}
           {/* {results.reduce((somatoriaAtual, resultadoAtual) => {
             const isAcerto = resultadoAtual === true;
             if (isAcerto) {
